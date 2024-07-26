@@ -1,6 +1,6 @@
 # HTML Responsive Coming Soon Under Construction page
 
-![mockup](https://github.com/nipanimaju/coming-soon/blob/master/mockup.jpg?raw=true 'mockup')
+![mockup](https://github.com/Wesley-Sinde/html-coming-soon-master/master/mockup.jpg?raw=true 'mockup')
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?logo=paypal)](https://www.paypal.com/paypalme/nipanimaju)
