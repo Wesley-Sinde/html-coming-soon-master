@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free coming soon template" />
+    <meta name="author" content="WESLEY SINDE" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Muli:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    />
+    <script src="https://kit.fontawesome.com/3c09bcb51a.js"></script>
+    <title>Comming Soon</title>
+    <link href="styles/main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="left-wrap col-12 col-md-5">
+          <div class="left">
+            <p><span class="days"></span><span class="small"> days</span></p>
+            <p><span class="hours"></span><span class="small"> hours</span></p>
+            <p>
+              &nbsp;&nbsp;<span class="minutes"></span
+              ><span class="small"> minutes</span>
+            </p>
+            <p>
+              &nbsp;&nbsp;<span class="seconds"></span
+              ><span class="small"> seconds</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-7 right">
+          <div class="mainInfo">
+            <h1>COMING SOON</h1>
+            <p class="slogan">
+              We're excited to share something new and innovative with you. Our
+              team is working hard behind the scenes to bring you an exceptional
+              experience that will transform the way you interact with our
+              services. Stay tuned for updates as we prepare to launch our new
+              platform. In the meantime, feel free to sign up for updates and be
+              the first to know when we go live. Thank you for your patience and
+              support!
+            </p>
+            <!-- <form class="form-subscribe" action="#">
+              <input
+                type="email"
+                class="form"
+                placeholder="Your email address"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form> -->
+
+            <form
+              action="subscribe.php"
+              class="form-subscribe"
+              id="subscribeForm"
+            >
+              <input
+                type="email"
+                class="form"
+                id="emailInput"
+                placeholder="Your email address"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+          <ul class="icon-list">
+            <li class="icon"><a class="twitter" href="#"></a></li>
+            <li class="icon"><a class="linkedin" href="#"></a></li>
+            <li class="icon"><a class="facebook" href="#"></a></li>
+            <li class="icon"><a class="instagram" href="#"></a></li>
+            <li class="icon"><a class="youtube" href="#"></a></li>
+            <li class="icon"><a class="github" href="#"></a></li>
+            <li class="icon"><a class="stackoverflow" href="#"></a></li>
+            <li class="icon"><a class="medium" href="#"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="scripts/bundle.js"></script>
+    <script>
+      document
+        .getElementById('subscribeForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById('emailInput').value;
+
+          fetch('subscribe.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                alert('Thank you for subscribing!');
+              } else {
+                alert('There was an error. Please try again.');
+              }
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+              alert('There was an error. Please try again.');
+            });
+
+          // Clear the form
+          document.getElementById('subscribeForm').reset();
+        });
+    </script>
+    <!-- <script>
+      document
+        .getElementById('subscribeForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById('emailInput').value;
+
+          fetch('subscribe.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                alert('Thank you for subscribing!');
+              } else {
+                alert('There was an error. Please try again.');
+              }
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+              alert('There was an error. Please try again.');
+            });
+
+          // Clear the form
+          document.getElementById('subscribeForm').reset();
+        });
+    </script> -->
+  </body>
+</html>
